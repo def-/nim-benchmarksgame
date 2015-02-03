@@ -2,7 +2,8 @@
 
 Compared to C implementations from http://benchmarksgame.alioth.debian.org/ .
 These are among the fastest. All benchmarks run on my Intel Core2Quad Q9300,
-x86_64, single core.
+x86_64, single core. I'm running Linux with gcc 4.9.2, clang 3.5.1 and nim from
+devel branch.
 
 See each file for information about where it's from. Contributions are welcome.
 

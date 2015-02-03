@@ -10,18 +10,20 @@ type Rusage {.importc: "struct rusage", header: "<sys/resource.h>",
 proc wait4(pid: TPid, status: ptr cint, options: cint, rusage: ptr Rusage): TPid
   {.importc, header: "<sys/wait.h>", discardable.}
 
-let
+const
   maxlen = 30
+  buflen = 8192
+let
   name = paramStr(1)
   params = commandLineParams()[1 .. -1]
   t0 = epochTime()
 var
   rusage: Rusage
+  buffer: array[buflen, char]
   p = startProcess("./" & name, args = params)
   outp = p.outputStream
 
-var line = newStringOfCap(120).TaintedString
-while outp.readLine(line): discard
+while outp.readData(addr buffer[0], buflen) > 0: discard
 
 wait4(p.processID, nil, 0, addr rusage)
 

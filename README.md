@@ -15,27 +15,27 @@ To run the benchmarks on your machine:
 ## nbody
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| nbody_nim_gcc                  |    12.28 |        1796 |
-| nbody_nim_clang                |    15.78 |        1720 |
-| nbody_2_nim_gcc                |    10.66 |        1808 |
-| nbody_2_nim_clang              |    15.38 |        1764 |
-| nbody_c                        |    10.25 |        1508 |
+| nbody_nim_gcc                  |    12.19 |        1872 |
+| nbody_nim_clang                |    15.74 |        1780 |
+| nbody_2_nim_gcc                |    10.64 |        1776 |
+| nbody_2_nim_clang              |    15.36 |        1728 |
+| nbody_c                        |    10.18 |        1716 |
 
 ## pidigits
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| pidigits_gmp_nim_gcc           |     1.67 |        2812 |
-| pidigits_gmp_nim_clang         |     1.66 |        2604 |
-| pidigits_bigints_nim_gcc       |    27.70 |        7976 |
-| pidigits_bigints_nim_clang     |    26.84 |        8992 |
-| pidigits_c                     |     1.69 |        2308 |
+| pidigits_gmp_nim_gcc           |     1.67 |        2740 |
+| pidigits_gmp_nim_clang         |     1.67 |        2748 |
+| pidigits_bigints_nim_gcc       |    31.82 |        8020 |
+| pidigits_bigints_nim_clang     |    26.65 |        8984 |
+| pidigits_c                     |     1.66 |        2292 |
 
 ## fastaredux
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| fastaredux_nim_gcc             |     7.10 |        1388 |
-| fastaredux_nim_clang           |     6.90 |        1284 |
-| fastaredux_c                   |     7.13 |        1380 |
+| fastaredux_nim_gcc             |     2.73 |        1384 |
+| fastaredux_nim_clang           |     3.15 |        1348 |
+| fastaredux_c                   |     1.87 |        1352 |
 
 ## Related work
 There are some other nice benchmarks online comparing Nim to other languages:

@@ -16,27 +16,27 @@ To run the benchmarks on your machine:
 ## nbody
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| nbody_nim_gcc                  |    12.19 |        1872 |
-| nbody_nim_clang                |    15.74 |        1780 |
-| nbody_2_nim_gcc                |    10.64 |        1776 |
-| nbody_2_nim_clang              |    15.36 |        1728 |
-| nbody_c                        |    10.18 |        1716 |
-
+| nbody_nim_gcc                  |    12.22 |        1788 |
+| nbody_nim_clang                |    16.95 |        1848 |
+| nbody_2_nim_gcc                |    10.64 |        1764 |
+| nbody_2_nim_clang              |    14.80 |        1748 |
+| nbody_3_nim_gcc                |    11.40 |        1788 |
+| nbody_3_nim_clang              |    13.12 |        1824 |
+| nbody_c                        |    10.20 |        1668 |
 ## pidigits
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| pidigits_gmp_nim_gcc           |     1.67 |        2740 |
-| pidigits_gmp_nim_clang         |     1.67 |        2748 |
-| pidigits_bigints_nim_gcc       |    31.82 |        8020 |
-| pidigits_bigints_nim_clang     |    26.65 |        8984 |
-| pidigits_c                     |     1.66 |        2292 |
-
+| pidigits_gmp_nim_gcc           |     1.70 |        2760 |
+| pidigits_gmp_nim_clang         |     1.66 |        2736 |
+| pidigits_bigints_nim_gcc       |    27.66 |        7968 |
+| pidigits_bigints_nim_clang     |    27.28 |        8500 |
+| pidigits_c                     |     1.66 |        2400 |
 ## fastaredux
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| fastaredux_nim_gcc             |     2.73 |        1384 |
-| fastaredux_nim_clang           |     3.15 |        1348 |
-| fastaredux_c                   |     1.87 |        1352 |
+| fastaredux_nim_gcc             |     2.76 |        1440 |
+| fastaredux_nim_clang           |     3.21 |        1384 |
+| fastaredux_c                   |     1.80 |        1368 |
 
 ## Related work
 There are some other nice benchmarks online comparing Nim to other languages:

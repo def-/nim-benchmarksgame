@@ -12,6 +12,8 @@ header nbody
 ./bench nbody_nim_clang 50000000
 ./bench nbody_2_nim_gcc 50000000
 ./bench nbody_2_nim_clang 50000000
+./bench nbody_3_nim_gcc 50000000
+./bench nbody_3_nim_clang 50000000
 ./bench nbody_c 50000000
 
 header pidigits

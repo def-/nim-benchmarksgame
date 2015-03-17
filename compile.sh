@@ -9,6 +9,9 @@ $NIM --cc:clang -o:nbody_nim_clang nbody.nim
 $NIM --cc:gcc -o:nbody_2_nim_gcc nbody_2.nim
 $NIM --cc:clang -o:nbody_2_nim_clang nbody_2.nim
 
+$NIM --cc:gcc -o:nbody_3_nim_gcc nbody_3.nim
+$NIM --cc:clang -o:nbody_3_nim_clang nbody_3.nim
+
 gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 -lm -o nbody_c nbody.c
 
 $NIM --cc:gcc -o:pidigits_gmp_nim_gcc pidigits_gmp.nim

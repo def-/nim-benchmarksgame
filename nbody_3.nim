@@ -56,23 +56,23 @@ proc offsetMomentum(b: var Body, px, py, pz: float) =
   b.vz = -pz / SOLAR_MASS
 
 proc advance(dt: float) =
-  for i, body1 in bodies.mpairs:
+  for i in 0 .. bodies.high:
     for j in i+1 .. bodies.high:
       let
-        dx = body1.x - bodies[j].x
-        dy = body1.y - bodies[j].y
-        dz = body1.z - bodies[j].z
+        dx = bodies[i].x - bodies[j].x
+        dy = bodies[i].y - bodies[j].y
+        dz = bodies[i].z - bodies[j].z
         dSquared = dx * dx + dy * dy + dz * dz
         distance = sqrt(dSquared)
         mag = dt / (dSquared * distance)
 
-      body1.vx -= dx * bodies[j].mass * mag
-      body1.vy -= dy * bodies[j].mass * mag
-      body1.vz -= dz * bodies[j].mass * mag
+      bodies[i].vx -= dx * bodies[j].mass * mag
+      bodies[i].vy -= dy * bodies[j].mass * mag
+      bodies[i].vz -= dz * bodies[j].mass * mag
 
-      bodies[j].vx += dx * body1.mass * mag
-      bodies[j].vy += dy * body1.mass * mag
-      bodies[j].vz += dz * body1.mass * mag
+      bodies[j].vx += dx * bodies[i].mass * mag
+      bodies[j].vy += dy * bodies[i].mass * mag
+      bodies[j].vz += dz * bodies[i].mass * mag
 
   for body in bodies.mitems:
     body.x += dt * body.vx
@@ -82,19 +82,19 @@ proc advance(dt: float) =
 proc energy: float =
   var dx, dy, dz, distance: float
 
-  for i, body in bodies:
-    result += 0.5 * body.mass *
-      (body.vx * body.vx +
-       body.vy * body.vy +
-       body.vz * body.vz)
+  for i in 0 .. bodies.high:
+    result += 0.5 * bodies[i].mass *
+      (bodies[i].vx * bodies[i].vx +
+       bodies[i].vy * bodies[i].vy +
+       bodies[i].vz * bodies[i].vz)
 
     for j in i+1 .. bodies.high:
-      dx = body.x - bodies[j].x
-      dy = body.y - bodies[j].y
-      dz = body.z - bodies[j].z
+      dx = bodies[i].x - bodies[j].x
+      dy = bodies[i].y - bodies[j].y
+      dz = bodies[i].z - bodies[j].z
 
       distance = sqrt(dx * dx + dy * dy + dz * dz)
-      result -= (body.mass * body.mass) / distance
+      result -= (bodies[i].mass * bodies[j].mass) / distance
 
 var px, py, pz = 0.0
 

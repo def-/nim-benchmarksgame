@@ -16,13 +16,13 @@ To run the benchmarks on your machine:
 ## nbody
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|
-| nbody_nim_gcc                  |    12.22 |        1788 |
-| nbody_nim_clang                |    16.95 |        1848 |
-| nbody_2_nim_gcc                |    10.64 |        1764 |
-| nbody_2_nim_clang              |    14.80 |        1748 |
-| nbody_3_nim_gcc                |    11.40 |        1788 |
-| nbody_3_nim_clang              |    13.12 |        1824 |
-| nbody_c                        |    10.20 |        1668 |
+| nbody_nim_gcc                  |    12.25 |        1708 |
+| nbody_nim_clang                |    16.90 |        1768 |
+| nbody_2_nim_gcc                |    10.64 |        1932 |
+| nbody_2_nim_clang              |    14.66 |        1836 |
+| nbody_3_nim_gcc                |    11.17 |        1824 |
+| nbody_3_nim_clang              |    14.74 |        1756 |
+| nbody_c                        |    10.17 |        1596 |
 ## pidigits
 | Implementation                 | Time [s] | Memory [KB] |
 | ------------------------------ | --------:| -----------:|

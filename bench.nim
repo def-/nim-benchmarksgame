@@ -15,12 +15,12 @@ const
   buflen = 8192
 let
   name = paramStr(1)
-  params = commandLineParams()[1 .. -1]
+  params = commandLineParams()
   t0 = epochTime()
 var
   rusage: Rusage
   buffer: array[buflen, char]
-  p = startProcess("./" & name, args = params)
+  p = startProcess("./" & name, args = params[1 .. ^1])
   outp = p.outputStream
 
 while outp.readData(addr buffer[0], buflen) > 0: discard
@@ -29,6 +29,6 @@ wait4(p.processID, nil, 0, addr rusage)
 
 let t1 = epochTime()
 
-echo "| ", name, repeatChar(maxlen - name.len), " | ",
+echo "| ", name, spaces(maxlen - name.len), " | ",
   formatFloat(t1-t0, ffDecimal, 2).align(8), " | ",
   align($rusage.ru_maxrss, 11), " |"

@@ -5,7 +5,6 @@
 
 import gmp
 import gmp/utils
-import unsigned
 import strutils
 import os
 

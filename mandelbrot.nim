@@ -1,3 +1,5 @@
+{.experimental.}
+
 import os, complex, strutils, threadpool
 
 proc inMandelbrot(c: Complex): uint8 {.inline.} =

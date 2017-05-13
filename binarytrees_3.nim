@@ -1,3 +1,5 @@
+{.experimental.}
+
 import os, strutils, threadpool
 
 type
@@ -34,7 +36,7 @@ echo "stretch tree of depth ", stretchDepth, "\t check: ", check
 let longLivedTree = bottomUpTree(0, maxDepth)
 
 proc calc(depth: int32): int32 =
-  let iterations = 1 shl (maxDepth - depth + minDepth)
+  let iterations = 1'i32 shl (maxDepth - depth + minDepth)
 
   for i in 1 .. iterations:
     result += bottomUpTree(i, depth).itemCheck +
@@ -49,7 +51,7 @@ parallel:
 
 depth = minDepth
 for r in res:
-  let iterations = 1 shl (maxDepth - depth + minDepth)
+  let iterations = 1'i32 shl (maxDepth - depth + minDepth)
   echo iterations*2, "\t trees of depth ", depth, "\t check: ", r
   depth += 2
 

@@ -7,7 +7,7 @@ type Rusage {.importc: "struct rusage", header: "<sys/resource.h>",
     ru_inblock, ru_oublock, ru_msgsnd, ru_msgrcv, ru_nsignals, ru_nvcsw,
     ru_nivcsw: clong
 
-proc wait4(pid: TPid, status: ptr cint, options: cint, rusage: ptr Rusage): TPid
+proc wait4(pid: Pid, status: ptr cint, options: cint, rusage: ptr Rusage): Pid
   {.importc, header: "<sys/wait.h>", discardable.}
 
 const
@@ -25,7 +25,7 @@ var
 
 while outp.readData(addr buffer[0], buflen) > 0: discard
 
-wait4(p.processID, nil, 0, addr rusage)
+wait4(Pid(p.processID), nil, 0, addr rusage)
 
 let t1 = epochTime()
 

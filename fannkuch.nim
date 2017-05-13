@@ -1,3 +1,5 @@
+{.experimental.}
+
 proc initFactorial(n: int): seq[int] =
   result = newSeq[int](n + 1)
   result[0] = 1;

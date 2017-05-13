@@ -1,3 +1,5 @@
+{.experimental.}
+
 import os, strutils, threadpool
 
 type float2 = array[2, float] #XXX replace with SSE/AVX things
@@ -36,8 +38,6 @@ proc iter(r: var float2x4, i: var float2x4, m2: var float2x4,
 proc mand8(r0: float2x4, i0: float2): uint8 =
   var r = r0
   var i, m2: float2x4
-  proc b(i, j: int): int {.inline.} =
-    result = if not (m2[i][j] <= 4.0): 1 else: 0
   for elt in 0..3:
     i[elt] = i0
   for it in 0..7:

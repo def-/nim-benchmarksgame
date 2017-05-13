@@ -34,7 +34,7 @@ echo "stretch tree of depth ", stretchDepth, "\t check: ", check
 let longLivedTree = bottomUpTree(0, maxDepth)
 
 proc calc(depth: int32) =
-  let iterations = 1 shl (maxDepth - depth + minDepth)
+  let iterations = 1'i32 shl (maxDepth - depth + minDepth)
   var check: int32 = 0
 
   for i in 1 .. iterations:

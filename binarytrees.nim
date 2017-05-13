@@ -36,7 +36,7 @@ echo "stretch tree of depth ", stretchDepth, "\t check: ", check
 let longLivedTree = bottomUpTree(0, maxDepth)
 
 for depth in countup(minDepth, maxDepth, 2):
-  let iterations = 1 shl (maxDepth - depth + minDepth)
+  let iterations = 1'i32 shl (maxDepth - depth + minDepth)
   check = 0
 
   for i in 1 .. iterations:

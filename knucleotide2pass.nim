@@ -10,7 +10,7 @@ const base4digits = "GATC"
 proc buildBase4(): array[256, int] =
   for i,c in base4digits:
     result[int(c)] = i
-    result[int(tolower(c))] = i
+    result[int(toLowerAscii(c))] = i
 const b4 = buildBase4()
 
 proc toBase4(sq: string): int64 =
@@ -34,7 +34,7 @@ iterator fastaAsBase4(): int =
 
 proc histo1(ct: ptr CountTable[int64], digits: seq[int8], fL: int) =
   var num = 0
-  let mask = (1 shl (2 * fLs)) - 1
+  let mask = (1 shl (2 * fL)) - 1
   for nDig, digit in digits:
     num = num or digit
     if nDig >= fL:

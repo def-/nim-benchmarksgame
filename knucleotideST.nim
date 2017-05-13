@@ -10,7 +10,7 @@ const base4digits = "GATC"
 proc buildBase4(): array[256, int] =
   for i,c in base4digits:
     result[int(c)] = i
-    result[int(tolower(c))] = i
+    result[int(toLowerAscii(c))] = i
 const b4 = buildBase4()
 
 proc toBase4(sq: string): int64 =

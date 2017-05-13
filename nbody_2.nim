@@ -97,7 +97,7 @@ proc energy(bodies: NBody): float64 =
     result += 0.5 * imass * (ivx * ivx + ivy * ivy + ivz * ivz)
     for j in i+1..high(bodies):
       let
-        (jx, jy, jz, jvx, jvy, jvz, jmass) = bodies[j]
+        (jx, jy, jz, _, _, _, jmass) = bodies[j]
         dx = ix - jx
         dy = iy - jy
         dz = iz - jz

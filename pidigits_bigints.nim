@@ -1,9 +1,9 @@
 # Translation of http://benchmarksgame.alioth.debian.org/u32/program.php?test=pidigits&lang=go&id=4
 
-import os, strutils, unsigned, bigints
+import os, strutils, bigints
 
 var
-  tmp1, tmp2, tmp3, acc, k, dd = initBigInt(0)
+  tmp1, tmp2, tmp3, acc, k = initBigInt(0)
   den, num, k2 = initBigInt(1)
 
 proc extractDigit(): int32 =
